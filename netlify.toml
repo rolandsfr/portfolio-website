@@ -1,0 +1,10 @@
+[build]
+    functions="./app/dist/.netlify/functions"
+    publish="./app/dist"
+
+[dev]
+    functions="./app/src/.netlify/functions"
+    publish="./app/src"
+
+[functions]
+    directory="./app/dist/.netlify/functions"

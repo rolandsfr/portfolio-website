@@ -1,0 +1,34 @@
+* {
+  color: #010101;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+[data-src] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.heading {
+  font-family: Modern;
+  text-transform: uppercase;
+}
+
+.description {
+  font-family: "Catamaran";
+  font-weight: 600;
+}
+
+.link {
+  font-family: Catamaran;
+  font-weight: light;
+  text-decoration: underline;
+}
