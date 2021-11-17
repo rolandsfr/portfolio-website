@@ -1,0 +1,1 @@
+module.exports = require('./src/app/src/.netlify/functions/fetchNotionTables/fetchNotionTables.js')
