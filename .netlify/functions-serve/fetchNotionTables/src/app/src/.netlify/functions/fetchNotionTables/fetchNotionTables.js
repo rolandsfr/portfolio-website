@@ -1801,6 +1801,7 @@ var handler = async (event) => {
       body: JSON.stringify(matchingResults)
     };
   } catch (error) {
+    console.error(error);
     return { statusCode: 500, body: error.message };
   }
 };

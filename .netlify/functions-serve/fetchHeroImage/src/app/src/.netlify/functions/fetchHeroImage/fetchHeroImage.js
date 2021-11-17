@@ -1790,6 +1790,7 @@ var handler = async (event) => {
       body: JSON.stringify(responseObject)
     };
   } catch (error) {
+    console.error(error);
     return { statusCode: 500, body: error.message };
   }
 };

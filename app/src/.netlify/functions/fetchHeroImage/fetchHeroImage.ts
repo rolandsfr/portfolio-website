@@ -26,6 +26,7 @@ const handler: Handler = async (event): Promise<Response> => {
       body: JSON.stringify(responseObject),
     };
   } catch (error) {
+    console.error(error);
     return { statusCode: 500, body: error.message };
   }
 };

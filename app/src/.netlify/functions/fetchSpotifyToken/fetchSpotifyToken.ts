@@ -56,6 +56,7 @@ const handler: Handler = async (event): Promise<Response> => {
       body: JSON.stringify({ access_token }),
     };
   } catch (error) {
+    console.error(error);
     return { statusCode: 500, body: error.toString() };
   }
 };

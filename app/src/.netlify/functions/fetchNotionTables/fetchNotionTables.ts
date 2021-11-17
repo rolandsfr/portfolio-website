@@ -40,6 +40,7 @@ const handler: Handler = async (event): Promise<Response> => {
       body: JSON.stringify(matchingResults),
     };
   } catch (error) {
+    console.error(error);
     return { statusCode: 500, body: error.message };
   }
 };
