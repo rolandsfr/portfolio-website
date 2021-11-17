@@ -1,1 +1,0 @@
-module.exports = require('./src/app/src/.netlify/functions/sendMail/sendMail.js')
