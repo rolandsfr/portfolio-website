@@ -48,6 +48,8 @@ const handler: Handler = async (event): Promise<Response> => {
 
   // const spotifyActivity = JSON.stringify(fethedActivity);
 
+  console.log("Function is up and running");
+
   try {
     return {
       statusCode: 200,

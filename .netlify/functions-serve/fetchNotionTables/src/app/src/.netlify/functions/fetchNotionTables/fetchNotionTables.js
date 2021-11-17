@@ -1795,6 +1795,7 @@ var handler = async (event) => {
         project_url: result.properties.work_url.url
       };
     });
+    console.log("Function is up and running");
     return {
       statusCode: 200,
       body: JSON.stringify(matchingResults)

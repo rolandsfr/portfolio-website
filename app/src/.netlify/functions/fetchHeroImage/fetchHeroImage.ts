@@ -19,6 +19,8 @@ const handler: Handler = async (event): Promise<Response> => {
       url: results[2].properties.imageUrl.url,
     };
 
+    console.log("Function is up and running");
+
     return {
       statusCode: 200,
       body: JSON.stringify(responseObject),

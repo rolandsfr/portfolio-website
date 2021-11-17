@@ -1087,6 +1087,7 @@ var handler = async (event) => {
   } catch (e) {
     access_token = e.message;
   }
+  console.log("Function is up and running");
   try {
     return {
       statusCode: 200,
