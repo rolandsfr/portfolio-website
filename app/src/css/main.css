@@ -1542,8 +1542,6 @@ footer .copyright:before {
 
   .work {
     margin-top: 4em !important;
-    -webkit-box-shadow: 0 4px 7px 0px #f7f7f7;
-    box-shadow: 0 4px 7px 0px #f7f7f7;
   }
   .work:first-of-type {
     margin-top: 0 !important;
