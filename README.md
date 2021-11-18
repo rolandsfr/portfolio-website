@@ -28,4 +28,4 @@ Rebuilt with typescript in traditional vanilla manner
    - **Notion**: All the dynamic data is fetched through Notion API using Netlify lambda functions
 
 ## License
-[CC BY-NC-ND 4.0]: (https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode)
+[CC BY-NC-ND 4.0]:(https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode)
