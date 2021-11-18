@@ -1,5 +1,5 @@
 # Personal portfolio website
-My personal portfolio website rebuilt with typescript in traditional vanilla manner
+Rebuilt with typescript in traditional vanilla manner
 
 ## Technologies used
 ### Development
@@ -12,7 +12,7 @@ My personal portfolio website rebuilt with typescript in traditional vanilla man
   - **Gulp**: Task runner to run development server and create the production build
   - **Webpack**: Serves as a typescript compiler
   
-  #### Bunding commands
+  #### Bundling commands
   
   Starts a development server with livereloading
   ```bash
@@ -25,4 +25,7 @@ My personal portfolio website rebuilt with typescript in traditional vanilla man
   ```
   
 ### CMS
-   - **Notion**: All the dynamic data is fetched through notion api using sererless functions
+   - **Notion**: All the dynamic data is fetched through Notion API using Netlify lambda functions
+
+## License
+[CC BY-NC-ND 4.0]: (https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode)
