@@ -1,18 +1,14 @@
 import * as AOS from "aos";
+import { cursorSetup } from "./cursorSetup";
+import splitbee from "@splitbee/web";
 
-// notion api stuff
+// Notion API helpers
 import { fetchNotionInfo, renderRecords } from "./notion/index";
 import { HeroImage, Record } from "./notion/notionFetchInterfaces";
 import { notionEndpoints } from "./notion/notionEndpoints";
 
-// emailjs-com
-import { setupEmailSender } from "./email";
-
-import { cursorSetup } from "./cursorSetup";
-
-// test variables
-
-// import { fetchedRecords } from "./exampleWorks";
+// setting up the software for tracking website traffic
+splitbee.init();
 
 (async () => {
   try {
@@ -28,7 +24,6 @@ import { cursorSetup } from "./cursorSetup";
     const fetchedRecords = await fetchNotionInfo<Record[]>(
       notionEndpoints.WORKS
     );
-    console.log(fetchedRecords);
     renderRecords(fetchedRecords, document.querySelector(".works")!);
   } catch (error) {
     document.querySelector(".works")?.remove();

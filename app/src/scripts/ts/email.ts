@@ -1,5 +1,5 @@
+import splitbee from "@splitbee/web";
 import emailjs from "emailjs-com";
-// import $ from "jquery";
 
 const setupEmailSender = () => {};
 
@@ -33,8 +33,8 @@ $("form").submit(async (e) => {
       message: $("#message").val(),
     };
 
-    emailjs.send("gmail", "msg", templateParams).then(
-      function (response) {
+    await emailjs.send("gmail", "msg", templateParams).then(
+      function () {
         $(".form-error")
           .html("Your message was successfully sent!")
           .addClass("success")
@@ -43,12 +43,17 @@ $("form").submit(async (e) => {
         $("form input, form textarea").css("border", "none");
         $("#email").focus();
       },
-      function (error) {
+      function () {
         $(".form-error")
           .html("Something went wrong... Refresh page and try again.")
           .show();
       }
     );
+
+    // send the information to the tracking platform
+    splitbee.track("email sent", {
+      user: templateParams.email as string,
+    });
   }
 });
 

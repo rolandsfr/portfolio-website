@@ -89,12 +89,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var AOS = require("aos");
-// notion api stuff
+var cursorSetup_1 = require("./cursorSetup");
+var web_1 = require("@splitbee/web");
+// Notion API helpers
 var index_1 = require("./notion/index");
 var notionEndpoints_1 = require("./notion/notionEndpoints");
-var cursorSetup_1 = require("./cursorSetup");
-// test variables
-// import { fetchedRecords } from "./exampleWorks";
+// setting up the software for tracking website traffic
+web_1["default"].init();
 (function () {
     return __awaiter(void 0, void 0, void 0, function () {
         var heroImage, heroImageFetched, heroImageUrl, e_1, fetchedRecords, error_1, errorDiv;
@@ -118,7 +119,6 @@ var cursorSetup_1 = require("./cursorSetup");
                     return [4 /*yield*/, index_1.fetchNotionInfo(notionEndpoints_1.notionEndpoints.WORKS)];
                 case 4:
                     fetchedRecords = _b.sent();
-                    console.log(fetchedRecords);
                     index_1.renderRecords(fetchedRecords, document.querySelector(".works"));
                     return [3 /*break*/, 6];
                 case 5:

@@ -92,6 +92,7 @@ exports.renderRecords = exports.fetchNotionInfo = void 0;
 // preloader stuff
 var image_preload_1 = require("image-preload");
 var image_preload_2 = require("image-preload");
+var web_1 = require("@splitbee/web");
 var fetchNotionInfo = function (endPoint) {
     return __awaiter(void 0, void 0, void 0, function () {
         var response, res;
@@ -123,6 +124,17 @@ var createNewRecord = function (_a) {
     var template = "\n    <div class=\"work-container\">\n        <div class=\"work-details\">\n            <h1 class=\"watermark\">" + watermark + "</h1>\n            <div class=\"details-content\">\n                <h3 class=\"work-title\">" + title + "</h3>\n                <p class=\"work-descr\">\n                    " + description + "\n                </p>\n                <a href=\"" + project_url + "\" class=\"view-work\">View work</a>\n            </div>\n        </div>\n        <img src=\"assets/img/icons8-coderwall.svg\" alt=\"icon\" class=\"work-icon\">\n    </div>\n  ";
     record.innerHTML = template;
     record.append(thumbnail_img);
+    // tracking for showcased projects
+    $(record)
+        .find(".view-work")
+        .on("click", function (e) {
+        var _a;
+        e.preventDefault();
+        web_1["default"].track("click on project", {
+            url: project_url
+        });
+        (_a = window.open(project_url, "_blank")) === null || _a === void 0 ? void 0 : _a.focus();
+    });
     return { record: record, img: thumbnail_img, src: thumbnail_url };
 };
 var renderRecords = function (records, rootElement) {

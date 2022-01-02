@@ -89,49 +89,58 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 exports.setupEmailSender = void 0;
+var web_1 = require("@splitbee/web");
 var emailjs_com_1 = require("emailjs-com");
-// import $ from "jquery";
 var setupEmailSender = function () { };
 exports.setupEmailSender = setupEmailSender;
 $("form").submit(function (e) {
     return __awaiter(void 0, void 0, void 0, function () {
         var user_id, templateParams;
         return __generator(this, function (_a) {
-            user_id = "user_z3F7jyQ8qvbeOobnstw7p";
-            emailjs_com_1["default"].init(user_id);
-            e.preventDefault();
-            $(".form-error").hide();
-            $(".form-error").removeClass("success");
-            $("form input[type=text], #message").css("border", "none");
-            // Validating input values
-            if ($("form textarea, form input[type=email], form input[type=name]").val() ===
-                "") {
-                $(".form-error").show().html("Please, fill in all the fields.");
-                $("form textarea, form input[type=email], form input[type=name]").css("border", "1px solid #DC000F");
+            switch (_a.label) {
+                case 0:
+                    user_id = "user_z3F7jyQ8qvbeOobnstw7p";
+                    emailjs_com_1["default"].init(user_id);
+                    e.preventDefault();
+                    $(".form-error").hide();
+                    $(".form-error").removeClass("success");
+                    $("form input[type=text], #message").css("border", "none");
+                    if (!($("form textarea, form input[type=email], form input[type=name]").val() ===
+                        ""))
+                        return [3 /*break*/, 1];
+                    $(".form-error").show().html("Please, fill in all the fields.");
+                    $("form textarea, form input[type=email], form input[type=name]").css("border", "1px solid #DC000F");
+                    return [3 /*break*/, 3];
+                case 1:
+                    // Sending the email
+                    $(".form-error").html("");
+                    templateParams = {
+                        name: $("#name").val(),
+                        email: $("#email").val(),
+                        message: $("#message").val()
+                    };
+                    return [4 /*yield*/, emailjs_com_1["default"].send("gmail", "msg", templateParams).then(function () {
+                            $(".form-error")
+                                .html("Your message was successfully sent!")
+                                .addClass("success")
+                                .show();
+                            $("#email, #name, form textarea").val("");
+                            $("form input, form textarea").css("border", "none");
+                            $("#email").focus();
+                        }, function () {
+                            $(".form-error")
+                                .html("Something went wrong... Refresh page and try again.")
+                                .show();
+                        })];
+                case 2:
+                    _a.sent();
+                    // send the information to the tracking platform
+                    web_1["default"].track("email sent", {
+                        user: templateParams.email
+                    });
+                    _a.label = 3;
+                case 3: return [2 /*return*/];
             }
-            else {
-                // Sending the email
-                $(".form-error").html("");
-                templateParams = {
-                    name: $("#name").val(),
-                    email: $("#email").val(),
-                    message: $("#message").val()
-                };
-                emailjs_com_1["default"].send("gmail", "msg", templateParams).then(function (response) {
-                    $(".form-error")
-                        .html("Your message was successfully sent!")
-                        .addClass("success")
-                        .show();
-                    $("#email, #name, form textarea").val("");
-                    $("form input, form textarea").css("border", "none");
-                    $("#email").focus();
-                }, function (error) {
-                    $(".form-error")
-                        .html("Something went wrong... Refresh page and try again.")
-                        .show();
-                });
-            }
-            return [2 /*return*/];
         });
     });
 });

@@ -4,6 +4,7 @@ import { Record } from "./notionFetchInterfaces";
 // preloader stuff
 import Preload from "image-preload";
 import { Order } from "image-preload";
+import splitbee from "@splitbee/web";
 
 const fetchNotionInfo = async <T>(endPoint: notionEndpoints): Promise<T> => {
   let response = await fetch(`./.netlify/functions${endPoint}`);
@@ -54,6 +55,19 @@ const createNewRecord = ({
 
   record.innerHTML = template;
   record.append(thumbnail_img);
+
+  // tracking for showcased projects
+  $(record)
+    .find(".view-work")
+    .on("click", (e) => {
+      e.preventDefault();
+
+      splitbee.track("click on project", {
+        url: project_url,
+      });
+
+      window.open(project_url, "_blank")?.focus();
+    });
 
   return { record, img: thumbnail_img, src: thumbnail_url };
 };
