@@ -26,6 +26,9 @@ Rebuilt with typescript in traditional vanilla manner
   
 ### CMS
    - **Notion**: All the dynamic data is fetched through Notion API using Netlify lambda functions
+   
+### Notice
+Website is currently being reworked starting with fresh modern design and ending with development using latest tehnologies.
 
 ## License
 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode)
