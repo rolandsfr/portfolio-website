@@ -6,9 +6,12 @@ import splitbee from "@splitbee/web";
 import { fetchNotionInfo, renderRecords } from "./notion/index";
 import { HeroImage, Record } from "./notion/notionFetchInterfaces";
 import { notionEndpoints } from "./notion/notionEndpoints";
+import { applyTemplate } from "./template";
 
 // setting up the software for tracking website traffic
 splitbee.init();
+
+applyTemplate();
 
 (async () => {
   try {

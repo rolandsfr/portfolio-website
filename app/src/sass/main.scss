@@ -1215,6 +1215,10 @@ footer {
     position: relative;
     margin-left: 1em;
 
+    span {
+      color: #fff;
+    }
+
     &:before {
       content: "";
       position: absolute;

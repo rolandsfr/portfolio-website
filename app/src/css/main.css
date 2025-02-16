@@ -1089,6 +1089,9 @@ footer .copyright {
   position: relative;
   margin-left: 1em;
 }
+footer .copyright span {
+  color: #fff;
+}
 footer .copyright:before {
   content: "";
   position: absolute;
