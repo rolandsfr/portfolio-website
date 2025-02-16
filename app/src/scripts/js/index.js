@@ -94,8 +94,10 @@ var web_1 = require("@splitbee/web");
 // Notion API helpers
 var index_1 = require("./notion/index");
 var notionEndpoints_1 = require("./notion/notionEndpoints");
+var template_1 = require("./template");
 // setting up the software for tracking website traffic
 web_1["default"].init();
+template_1.applyTemplate();
 (function () {
     return __awaiter(void 0, void 0, void 0, function () {
         var heroImage, heroImageFetched, heroImageUrl, e_1, fetchedRecords, error_1, errorDiv;
